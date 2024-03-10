@@ -30,10 +30,9 @@
                     <li  id = "about-link" class = "nav-item" ><a  class = "nav-link <?php echo $about; ?>" href="#">ABOUT US</a></li>
                     <li class = "nav-item"><a class = "nav-link <?php echo $faqs; ?>" href="../end-users/faqs.php">FAQs</a></li>
 
-<<<<<<< Updated upstream
                     <button class= "log-in">Login</button>
                     <button class= "sign-up">Sign up</button>
-=======
+
                     <?php
                         //check if user is logged in
                         if(isset($_SESSION['logged-in'])){
@@ -60,7 +59,7 @@
                         <button class= "sign-up join">Sign up</button>
                     <?php }
                     ?>
->>>>>>> Stashed changes
+
                 </ul>
                 
 

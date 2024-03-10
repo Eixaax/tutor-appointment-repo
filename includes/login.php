@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-=======
+
 <?php
     if(isset($_POST['username']) && isset($_POST['password'])){
         require_once "../classes/tutor.class.php";
@@ -42,7 +41,7 @@
     }
 ?>
 <div class="disabled-bg" ></div>
->>>>>>> Stashed changes
+
 <div class="form-login">
     <div class="login-container">
         <h1 class="login-title">Join Locusta</h1>
@@ -132,8 +131,7 @@
                     <label for="password-confirm"></label>
                     <input type="password" id="password-confirm" name="password-confirm" placeholder = "Confirm Password">
 
-<<<<<<< Updated upstream
-=======
+
             <!-- <button type = "submit" class="login-submit">LOGIN</button> -->
 
             <div class="lines">
@@ -174,7 +172,7 @@
                         <input class = "guardian-radio type-radio" type="radio" id="guardian" name="type" value="guardian">
                         <label class = "guardian-label type-label" for="guardian">Guardian</label>
                     </div>  
->>>>>>> Stashed changes
+
                 </div>
                 <div class="input-container-personal-info">
                     <h4 class = "input-container-header">Personal Information</h4>
