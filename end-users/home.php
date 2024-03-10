@@ -1,9 +1,7 @@
 <?php
-<<<<<<< Updated upstream
-=======
     session_start();
 
->>>>>>> Stashed changes
+
     require_once "../variables/nav.php";
     $home = "active";
     require_once "../includes/header.php";
