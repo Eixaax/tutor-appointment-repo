@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once "../variables/nav.php";
     $tutors = "active";
     require_once "../includes/header.php";

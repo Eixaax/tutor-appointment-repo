@@ -30,8 +30,37 @@
                     <li  id = "about-link" class = "nav-item" ><a  class = "nav-link <?php echo $about; ?>" href="#">ABOUT US</a></li>
                     <li class = "nav-item"><a class = "nav-link <?php echo $faqs; ?>" href="../end-users/faqs.php">FAQs</a></li>
 
+<<<<<<< Updated upstream
                     <button class= "log-in">Login</button>
                     <button class= "sign-up">Sign up</button>
+=======
+                    <?php
+                        //check if user is logged in
+                        if(isset($_SESSION['logged-in'])){
+                            // show the first name of the user
+                    ?>
+                            <?php if($_SESSION['logged-in']['type'] == 'tutor'): ?>
+                                <a href="../tutor/tutor-profile.php">
+                                    <button class="log-in join"><?php echo $_SESSION['logged-in']['firstname']; ?></button>
+                                </a>
+                            <?php else: ?>
+                                <a href="../end-users/home.php">
+                                    <button class="log-in join"><?php echo $_SESSION['logged-in']['firstname']; ?></button>
+                                </a>
+                            <?php endif; ?>
+
+                            
+                            </button>
+                            <a href = "../includes/logout.php"><button class= "log-in "> Log out</button></a>
+
+                    <?php 
+                        }else{
+                    ?>
+                        <button class= "log-in join">Login</button>
+                        <button class= "sign-up join">Sign up</button>
+                    <?php }
+                    ?>
+>>>>>>> Stashed changes
                 </ul>
                 
 

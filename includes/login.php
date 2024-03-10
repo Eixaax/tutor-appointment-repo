@@ -1,3 +1,48 @@
+<<<<<<< Updated upstream
+=======
+<?php
+    if(isset($_POST['username']) && isset($_POST['password'])){
+        require_once "../classes/tutor.class.php";
+        require_once "../classes/learner.class.php";
+
+        //Sanitizing the inputs of the users. Mandatory to prevent injections!
+        $username = htmlentities($_POST['username']);
+        $password = htmlentities($_POST['password']);
+
+        
+        $learner = new Learner();
+        $tutor = new Tutor();
+
+
+        $learnerAccounts = $learner->show();
+        $tutorAccounts = $tutor->show();
+
+
+        foreach($learnerAccounts as $keys => $value){
+            //check if the username and password match in the array
+            if($username == $value['username'] && $password == $value['password']){
+                //if match then save username, fullname and type as session to be reused somewhere else
+                $_SESSION['logged-in'] = $value;
+                header('location: home.php');
+            }
+        }
+        foreach($tutorAccounts as $keys => $value){
+            //check if the username and password match in the array
+            if($username == $value['username'] && $password == $value['password']){
+                //if match then save username, fullname and type as session to be reused somewhere else
+                $_SESSION['logged-in'] = $value;
+
+                header('location: ../tutor/tutor-profile.php');
+            }
+        }
+
+
+        //set the error message if account is invalid
+        $error = 'Invalid username/password. Try again.';
+    }
+?>
+<div class="disabled-bg" ></div>
+>>>>>>> Stashed changes
 <div class="form-login">
     <div class="login-container">
         <h1 class="login-title">Join Locusta</h1>
@@ -87,6 +132,49 @@
                     <label for="password-confirm"></label>
                     <input type="password" id="password-confirm" name="password-confirm" placeholder = "Confirm Password">
 
+<<<<<<< Updated upstream
+=======
+            <!-- <button type = "submit" class="login-submit">LOGIN</button> -->
+
+            <div class="lines">
+                <div class="line"></div>
+                <p class="or">or</p>
+                <div class="line"></div>
+            </div>
+
+            <p class="no-account">You don`t have an account? Sign Up as Tutor or Learner </p>
+
+            <button type = "button" class="create-account">Create Account</button>
+        </div>
+        
+    </div>
+    <div class="sign-in container">
+        <div class="sign-in-preview">
+            <div class="sign-in-header">
+                <h4 class="type-header">You want to become a tutor or learner?</h4>
+                <p class="p-choose">Please  choose if you want to a tutor, learner or guardian</p>
+            </div>
+
+            <div class="form-type-radio">
+                    <div class="radio-container">
+                        <img src="../images/other/tutor.png" alt="">
+                        <input class = "tutor-radio type-radio" type="radio" id="tutor" name="type" value="tutor">
+                        <a href = "../end-users/tutor-sign-up.php" >Tutor</a>
+                    </div>
+
+                    <div class="radio-container">
+                        <img src="../images/other/learner.png" alt="">
+                        <input class = "learner-radio type-radio" type="radio" id="learner" name="type" value="learner">
+                        <a href = "../end-users/learner-sign-up.php" >Learner</a>
+
+                    </div>  
+
+                    <div class="radio-container">
+                        <img src="../images/other/guardian.png" alt="">
+                        <input class = "guardian-radio type-radio" type="radio" id="guardian" name="type" value="guardian">
+                        <label class = "guardian-label type-label" for="guardian">Guardian</label>
+                    </div>  
+>>>>>>> Stashed changes
                 </div>
                 <div class="input-container-personal-info">
                     <h4 class = "input-container-header">Personal Information</h4>
